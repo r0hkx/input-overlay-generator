@@ -205,7 +205,7 @@ def add_image(key, pos, pressed_image, not_pressed_image=None):
         
     if pressed_image.size != not_pressed_image.size:
         print("""Skipping element " + key + . Reason: pressed_image size and
-              not_pressed_imagesize are not equal. The sizes of these two
+              not_pressed_image size are not equal. The sizes of these two
               images need to be exactly equal.""")
     else:
         elements.append(
