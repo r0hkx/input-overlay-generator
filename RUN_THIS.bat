@@ -1,1 +1,1 @@
-pip install pillow
+py -m pip install pillow
