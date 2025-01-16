@@ -190,7 +190,12 @@ elements = []
 def add_image(key, pos, pressed_image, not_pressed_image=None):
 
     if isinstance(pressed_image, str):
-        pressed_image = Image.open(pressed_image)
+        try:
+            pressed_image = Image.open(pressed_image)
+        except FileNotFoundError:
+            print("Skipping element " + key +
+                  ". Reason: File not found. Is the file path correct?")
+            return
 
     if not_pressed_image == None:
         not_pressed_image = Image.new("RGBA", pressed_image.size, (0, 0, 0, 0))
@@ -204,22 +209,24 @@ def add_image(key, pos, pressed_image, not_pressed_image=None):
         type = 1
         
     if pressed_image.size != not_pressed_image.size:
-        print("""Skipping element " + key + . Reason: pressed_image size and
-              not_pressed_image size are not equal. The sizes of these two
-              images need to be exactly equal.""")
-    else:
-        elements.append(
-            {
-                "key": key,
-                "type": type,
-                "pos": pos,
-                "size": pressed_image.size,
-                "pressed_image": pressed_image,
-                "not_pressed_image": not_pressed_image,
-            }
-        )
+        print("Skipping element " + key +
+              ". Reason: pressed_image size and not_pressed_image "
+              "size are not equal. The sizes of these two images "
+              "need to be exactly equal.")
+        return
     
-        print("Added element: Key: " + key + ", Type: " + str(type) +
+    elements.append(
+        {
+            "key": key,
+            "type": type,
+            "pos": pos,
+            "size": pressed_image.size,
+            "pressed_image": pressed_image,
+            "not_pressed_image": not_pressed_image,
+        }
+    )
+    
+    print("Added element: Key: " + key + ", Type: " + str(type) +
               ", Pos: " + str(pos) + ", Size: " + str(pressed_image.size))
 
 
