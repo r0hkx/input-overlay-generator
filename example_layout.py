@@ -13,13 +13,13 @@ add_rectangle(key="C", pos=(1176, 1023), size=(48, 48), pressed_color=(255, 255,
 add_rectangle(key="K", pos=(609, 1023), size=(48, 48), pressed_color=(255, 255, 255, 100), not_pressed_color=(100, 0, 100, 255))
 
 # actionbar
-add_image(key="W", pos=(801, 792), pressed_image="images/W.png", not_pressed_image="images/E.png")
-add_image(key="A", pos=(771, 828), pressed_image="images/A.png")
-add_image(key="S", pos=(801, 828), pressed_image="images/S.png")
-add_image(key="D", pos=(831, 828), pressed_image="images/D.png")
-add_image(key="SPACE", pos=(765, 864), pressed_image="images/Space.png")
-add_image(key="MOUSE_BUTTON1", pos=(1050, 864), pressed_image="images/LMB.png")
-add_image(key="MOUSE_BUTTON2", pos=(1116, 864), pressed_image="images/RMB.png")
-add_image(key="MOUSE_BUTTON3", pos=(1036, 828), pressed_image="images/Pick Block.png")
+add_image(key="W", pos=(801, 792), pressed_image="images/gui3/W.png", not_pressed_image="images/gui3/E.png")
+add_image(key="A", pos=(771, 828), pressed_image="images/gui3/A.png")
+add_image(key="S", pos=(801, 828), pressed_image="images/gui3/S.png")
+add_image(key="D", pos=(831, 828), pressed_image="images/gui3/D.png")
+add_image(key="SPACE", pos=(765, 864), pressed_image="images/gui3/Space.png")
+add_image(key="MOUSE_BUTTON1", pos=(1050, 864), pressed_image="images/gui3/LMB.png")
+add_image(key="MOUSE_BUTTON2", pos=(1116, 864), pressed_image="images/gui3/RMB.png")
+add_image(key="MOUSE_BUTTON3", pos=(1036, 828), pressed_image="images/gui3/Pick Block.png")
 
 generate_overlay_files((1920, 1080))
