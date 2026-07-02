@@ -2,12 +2,13 @@ from generator import add_rectangle, add_image, generate_overlay_files
 
 def c(key):
     key_conversion = {
-        "CAPS_LOCK": "V",
-        "V": "BACKSPACE",
+        "CAPS_LOCK": "R",
         "A": "Z",
+        "S": "Y",
         "D": "X",
         "Z": "A",
         "X": "D",
+        # "F3": "R",
     }
     if key not in key_conversion:
         return key
@@ -23,7 +24,7 @@ for x in range(9):
     hotbar_x_coord += 80
 
 # offhand
-add_rectangle(key="K", pos=(492, 1004), size=(64, 64), pressed_color=hotbar_color)
+add_rectangle(key="MOUSE_BUTTON5", pos=(492, 1004), size=(64, 64), pressed_color=hotbar_color)
 
 # left actionbar stuff
 row0 = 600
@@ -31,13 +32,14 @@ row1 = row0 + 48
 row2 = row1 + 48
 row3 = row2 + 48
 row4 = row3 + 48
-add_image(key=c("BACKQUOTE"), pos=(572, row0), pressed_image="images/gui4/Sprint.png")
+# add_image(key=c("BACKQUOTE"), pos=(572, row0), pressed_image="images/gui4/Sprint.png") doesn't work with danish char
 add_image(key=c("ESCAPE"), pos=(620, row1), pressed_image="images/gui4/Esc.png")
+add_image(key=c("TAB"), pos=(496, row2), pressed_image="images/gui4/Pick Block.png")
 add_image(key=c("Q"), pos=(708, row2), pressed_image="images/gui4/Q.png")
 add_image(key=c("W"), pos=(748, row2), pressed_image="images/gui4/W.png")
 add_image(key=c("E"), pos=(788, row2), pressed_image="images/gui4/E.png")
 add_image(key=c("F3"), pos=(828, row2), pressed_image="images/gui4/F3.png")
-add_image(key=c("CAPS_LOCK"), pos=(604, row3), pressed_image="images/gui4/Chat.png")
+# add_image(key=c("CAPS_LOCK"), pos=(604, row3), pressed_image="images/gui4/Chat.png") works but i don't want it anymore idt
 add_image(key=c("A"), pos=(708, row3), pressed_image="images/gui4/A.png")
 add_image(key=c("S"), pos=(748, row3), pressed_image="images/gui4/S.png")
 add_image(key=c("D"), pos=(788, row3), pressed_image="images/gui4/D.png")
@@ -48,6 +50,5 @@ add_image(key=c("SPACE"), pos=(700, row4), pressed_image="images/gui4/Space.png"
 add_image(key="MOUSE_BUTTON1", pos=(1080, row4), pressed_image="images/gui4/LMB.png")
 add_image(key="MOUSE_BUTTON2", pos=(1168, row4), pressed_image="images/gui4/RMB.png")
 add_image(key="MOUSE_BUTTON4", pos=(1016, row4), pressed_image="images/gui4/F5.png")
-add_image(key="MOUSE_BUTTON3", pos=(1060, row3), pressed_image="images/gui4/Pick Block.png")
 
 generate_overlay_files((1920, 1080))
